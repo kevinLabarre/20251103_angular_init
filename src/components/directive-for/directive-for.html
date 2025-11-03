@@ -1,0 +1,30 @@
+<section>
+  <h1>Directive {{"@for"}}</h1>
+
+  @for(user of users ; track user.id){
+  <ul>
+    <li>Prénom: {{user.firstName}}</li>
+    <li>nom: {{user.lastName}}</li>
+    <li>Age: {{user.age}}</li>
+    <li>Type de compte: {{user.bankAccount}}</li>
+  </ul>
+  }
+
+  <!-- Angular demande de tracker l'index quand on a des listes 'statiques'  -->
+  <ul>
+    @for(f of fruits ; let i = $index ; track i){
+    <li>index : {{i}} _ {{f}}</li>
+    }
+  </ul>
+
+
+  <!-- Ancienne syntaxe : -->
+
+  <ul *ngFor="let user of users">
+    <li>Prénom: {{user.firstName}}</li>
+    <li>nom: {{user.lastName}}</li>
+    <li>Age: {{user.age}}</li>
+    <li>Type de compte: {{user.bankAccount}}</li>
+  </ul>
+
+</section>

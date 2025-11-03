@@ -1,0 +1,9 @@
+<section>
+  <h1>Passage de données entre deux composant: du composant parent -> composant enfant</h1>
+  <!-- Attention ! syntaxe encore très récente ( "{{text}}" )
+  <app-composant-enfant parentText="{{text}}" parentUser="{{user}}"/>
+-->
+
+  <!-- Syntaxe à priviliégier -->
+  <app-composant-enfant [parentText]="text" [parentUser]="user" />
+</section>
