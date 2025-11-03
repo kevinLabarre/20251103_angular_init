@@ -8,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class BindDesPropsEtDesEvenements {
 
+  imgSrc: string = "favicon.ico"
+
+  handleClick() {
+    alert("J'ai cliqué sur le bouton")
+  }
+
+  // Logique pour désactiver un bouton
+
+  buttonDisabled: boolean = false
+
+  handleDisable() {
+    this.buttonDisabled = !this.buttonDisabled
+  }
+
 }

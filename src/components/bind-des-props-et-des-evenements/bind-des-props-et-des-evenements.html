@@ -1,1 +1,21 @@
-<p>bind-des-props-et-des-evenements works!</p>
+<section>
+  <h1>Binding des propriétés</h1>
+
+  <img src="favicon.ico" />
+  <img [src]="imgSrc" />
+
+  <h1>Binding des évènements</h1>
+
+  <button (click)="handleClick()" [disabled]="buttonDisabled">alert</button>
+  <button (click)="handleDisable()">Activer / désactiver le boutton 'alert'</button>
+
+  <br />
+  <br />
+
+  @if(buttonDisabled){
+  <button (click)="handleDisable()">Désactiver le boutton 'alert'</button>
+  } @else {
+  <button (click)="handleDisable()">Activer le boutton 'alert'</button>
+  }
+
+</section>
