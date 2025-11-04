@@ -17,4 +17,13 @@
   </p>
   }
 
+  <h1>Utilisation du ngModelChange</h1>
+  <p>Quand on souhaite déclencher une action sur changement de valeur de la variable liée à l'input (et donc à chaque
+    fois que la value de l'input change) nous pouvons utiliser le <strong>'ngModelChange'</strong>. Celui-ci nous permet
+    de bind une fonction qui sera appelée à chaque fois que la valeur de l'input change
+  </p>
+
+  <!-- Voir la console pour cet exemple -->
+  <input type="text" [(ngModel)]="inputValue" (ngModelChange)="handleChange()" />
+
 </section>

@@ -10,9 +10,12 @@ import { FormsModule } from '@angular/forms';
 export class InputAvecNgModel {
   name = "Toto";
   checkBoxValue = false
-
+  inputValue = ""
   handleReset() {
     this.name = "";
   }
 
+  handleChange() {
+    console.log(this.inputValue)
+  }
 }
