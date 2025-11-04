@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>categorie</th>
+      <th>date de publication</th>
+      <th>date de modification</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for (n of news ; track n.id){
+    <tr>
+      <td>{{n.titre}}</td>
+      <td>{{n.categorie}}</td>
+      <td>{{n.datePublication}}</td>
+      <td>{{n.dateModification}}</td>
+    </tr>
+    }
+  </tbody>
+</table>

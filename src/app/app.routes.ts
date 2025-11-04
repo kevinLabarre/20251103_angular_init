@@ -8,6 +8,7 @@ import { BindDesPropsEtDesEvenements } from '../components/bind-des-props-et-des
 import { Compteur } from '../components/compteur/compteur';
 import { InputAvecNgModel } from '../components/input-avec-ng-model/input-avec-ng-model';
 import { Exercice } from '../components/exercice/exercice';
+import { RequeteApi } from '../components/requete-api/requete-api';
 
 export const routes: Routes = [
   { path: "", component: TypescriptInit },
@@ -18,5 +19,6 @@ export const routes: Routes = [
   { path: "bind-des-props-et-des-evenements", component: BindDesPropsEtDesEvenements },
   { path: "compteur", component: Compteur },
   { path: "input-avec-ng-model", component: InputAvecNgModel },
-  { path: "exercice", component: Exercice }
+  { path: "exercice", component: Exercice },
+  { path: "requete-api", component: RequeteApi }
 ];

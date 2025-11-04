@@ -1,0 +1,17 @@
+<section>
+  <h1>Requetes API : affichage dans un tableau</h1>
+
+  <!-- Affichage dans un tableau -->
+  <app-news-table [news]="news" />
+
+  <h1>Requetes API : affichage avec des cartes</h1>
+  <!-- Affichage avec des 'cartes' -->
+  <div class="grid grid-cols-4 gap-5">
+    @for(n of news ; track n.id){
+    <app-news-card [actu]="n" />
+    }
+  </div>
+
+
+
+</section>
