@@ -1,0 +1,42 @@
+<section>
+  <h1>Les formulaires</h1>
+
+  <h2>Ajout d'une actualité</h2>
+
+  <form (ngSubmit)="handleSubmit()" [formGroup]=newsForm>
+
+    <div>
+      <input type="text" placeholder="titre" formControlName="titre" />
+      @if(requiredErrorTitle && titleTouched){
+      <span>Le titre est obligatoire</span>
+      }
+      @if(maxLenghtErrorTitle && titleTouched){
+      <span>Caractère max: 15</span>
+      }
+    </div>
+
+    <div>
+      <input type="text" placeholder="description" formControlName="texte" />
+      @if(textError && newsForm.get('texte')!.touched){
+      <span>Champ obligatoire</span>
+      }
+    </div>
+
+    <div>
+      <input type="text" placeholder="image adresse" formControlName="image" />
+      @if(imageError && newsForm.get('image')!.touched){
+      <span>Champ obligatoire</span>
+      }
+    </div>
+
+    <div>
+      <input type="text" placeholder="catégorie" formControlName="categorie" />
+      @if(categorieError && newsForm.get('image')!.touched){
+      <span>Champ obligatoire</span>
+      }
+    </div>
+
+    <button class="btn">Ajouter</button>
+  </form>
+
+</section>

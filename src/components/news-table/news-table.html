@@ -12,8 +12,8 @@
     <tr>
       <td>{{n.titre}}</td>
       <td>{{n.categorie}}</td>
-      <td>{{n.datePublication}}</td>
-      <td>{{n.dateModification}}</td>
+      <td>{{n.datePublication | date: 'shortDate'}}</td>
+      <td>{{n.dateModification | date: 'shortDate'}}</td>
     </tr>
     }
   </tbody>

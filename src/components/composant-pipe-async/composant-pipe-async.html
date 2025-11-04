@@ -1,0 +1,19 @@
+@let actu = actu$ | async;
+<!--
+  @let name = 'Toto';  // Depuis angular 18, il est possible de créer des vairables
+directement dans notre template
+-->
+
+<section>
+  <div class="grid grid-cols-4 gap-5">
+    @for(n of news$ | async ; track n.id){
+    <app-news-card [actu]="n" />
+    }
+  </div>
+
+
+  @if(actu){
+  {{actu.titre}}
+  }
+
+</section>

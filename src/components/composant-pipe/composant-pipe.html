@@ -1,0 +1,43 @@
+<section>
+
+  <h1>Les pipes sur angular: </h1>
+
+  <p>Les pipes sur angular s'utilise avec le ' | '
+    Les pipes peuvent prendre des paramètres (au final les pipes sont des fonctions). Chacun des paramètres
+    utilisés par une pipe est separé par un ':'
+  </p>
+  <p>Les pipes angular :</p>
+  <ul>
+    <li>Le pipe date</li>
+    <li>Le pipe currency</li>
+    <li>Le pipe json</li>
+    <li>Les pipes lowercase et uppercase</li>
+    <li>Le pipe number</li>
+    <li>Le pipe percent</li>
+    <li>Le pipe async</li>
+  </ul>
+
+  <h2>Exemple avec pipe Date: </h2>
+
+  <p>Sans le pipe : {{ myDate }} / {{myDate2}}</p>
+  <p>avec le pipe, sans paramètre :{{ myDate | date}}</p>
+
+  <p>avec param 'shortDate': <strong>{{ myDate2 | date: 'shortDate'}}</strong></p>
+  <p>avec param 'fullDate': <strong>{{ myDate2 | date: 'fullDate'}}</strong></p>
+  <p>avec param 'short': <strong>{{ myDate2 | date: 'short'}}</strong></p>
+  <p>avec param 'full': <strong>{{ myDate2 | date: 'full'}}</strong></p>
+
+  <!-- Avec format personnalisé: -->
+  <p><strong>{{ myDate2 | date:'dd/MM/yyyy' }}</strong></p> <!-- Format européen -->
+  <p><strong>{{ myDate2 | date:'EEEE, d MMMM y' }}</strong></p> <!-- Jour de la semaine, jour, mois et année -->
+
+
+  <h2>Exemple avec pipe Currency: </h2>
+  <p><strong>{{ money | currency:'EUR':'symbol':'1.0-0' }}</strong></p>
+  <p><strong>{{ money | currency:'EUR':'symbol':'1.0-2' }}</strong></p>
+  <p><strong>{{ money | currency:'EUR':'symbol':'1.2-2' }}</strong></p>
+  <p><strong>{{ money | currency:'USD':'symbol':'1.0-0' }}</strong></p>
+  <p><strong>{{ money | currency:'EUR':'symbol-narrow':'1.0-0' }}</strong></p>
+  <p><strong>{{ money | currency:'EUR':'nom personnalisé':'1.2-2' }}</strong></p>
+
+</section>

@@ -1,10 +1,13 @@
 <section>
-  <h1>Requetes API : affichage dans un tableau</h1>
+
+  <h1>Requetes API</h1>
+
+  <h2>Affichage dans un tableau</h2>
 
   <!-- Affichage dans un tableau -->
   <app-news-table [news]="news" />
 
-  <h1>Requetes API : affichage avec des cartes</h1>
+  <h2>Affichage avec des cartes</h2>
   <!-- Affichage avec des 'cartes' -->
   <div class="grid grid-cols-4 gap-5">
     @for(n of news ; track n.id){
@@ -12,6 +15,9 @@
     }
   </div>
 
+  <h2>En utilisant le pipe async</h2>
+  <app-composant-pipe-async />
 
-
+  <h2>On peut utiliser le pipe 'json' (en général, utilisé pour des tests) </h2>
+  {{news | json}}
 </section>

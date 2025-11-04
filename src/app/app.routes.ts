@@ -9,6 +9,8 @@ import { Compteur } from '../components/compteur/compteur';
 import { InputAvecNgModel } from '../components/input-avec-ng-model/input-avec-ng-model';
 import { Exercice } from '../components/exercice/exercice';
 import { RequeteApi } from '../components/requete-api/requete-api';
+import { ComposantPipe } from '../components/composant-pipe/composant-pipe';
+import { Formulaire } from '../components/formulaire/formulaire';
 
 export const routes: Routes = [
   { path: "", component: TypescriptInit },
@@ -20,5 +22,7 @@ export const routes: Routes = [
   { path: "compteur", component: Compteur },
   { path: "input-avec-ng-model", component: InputAvecNgModel },
   { path: "exercice", component: Exercice },
-  { path: "requete-api", component: RequeteApi }
+  { path: "requete-api", component: RequeteApi },
+  { path: "pipe", component: ComposantPipe },
+  { path: "formulaire", component: Formulaire }
 ];

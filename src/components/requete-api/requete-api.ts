@@ -4,10 +4,12 @@ import { Observable } from 'rxjs';
 import { INews } from '../../interfaces/INews';
 import { NewsTable } from "../news-table/news-table";
 import { NewsCard } from "../news-card/news-card";
+import { ComposantPipeAsync } from "../composant-pipe-async/composant-pipe-async";
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-requete-api',
-  imports: [NewsTable, NewsCard],
+  imports: [NewsTable, NewsCard, ComposantPipeAsync, JsonPipe],
   templateUrl: './requete-api.html',
   styleUrl: './requete-api.css',
 })

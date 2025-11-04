@@ -1,16 +1,19 @@
 <div class="card bg-base-100 w-96 shadow-sm">
-  <figure>
+  <figure class="h-48">
     <img [src]="actu.image" [alt]="actu.titre" />
   </figure>
   <div class="card-body">
-    <h2 class="card-title">
+    <h2 class="card-title h-24 overflow-hidden">
       {{actu.titre}}
-      <div class="badge badge-secondary">{{actu.categorie}}</div>
+
     </h2>
-    <p>{{actu.texte}}</p>
+    <div class="badge badge-secondary">{{actu.categorie}}</div>
+    <p class="h-24 overflow-hidden">{{actu.texte}}</p>
     <div class="card-actions justify-end">
-      <div class="badge badge-outline">{{actu.datePublication}}</div>
-      <div class="badge badge-outline">{{actu.dateModification}}</div>
+      <div class="badge badge-outline">{{actu.datePublication | date: 'fullDate'}}</div>
+      @if(actu.dateModification){
+      <div class="badge badge-outline">{{actu.dateModification | date: 'fullDate'}}</div>
+      }
     </div>
   </div>
 </div>
