@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NewsService } from '../../services/news-service';
+import { INews } from '../../interfaces/INews';
+import { ToastComponent } from "../toast-component/toast-component";
 
 @Component({
   selector: 'app-formulaire',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ToastComponent],
   templateUrl: './formulaire.html',
   styleUrl: './formulaire.css',
 })
 export class Formulaire {
+
+  constructor(private newsService: NewsService) { }
+
+  displaySuccessToast: boolean = false
+  displayErrorToast: boolean = false
 
   newsForm = new FormGroup({
     titre: new FormControl('', [Validators.maxLength(15), Validators.required]),
@@ -24,6 +32,31 @@ export class Formulaire {
     if (this.newsForm.valid) {
       console.log("Formulaire envoyé")
       console.log(this.newsForm.value)
+
+      const result = this.newsForm.value
+
+      const news: INews = {
+        titre: result.titre!,
+        texte: result.texte || "",
+        image: result.image!,
+        categorie: result.categorie!,
+        datePublication: new Date(),
+        dateModification: new Date(),
+      }
+
+      this.newsService.addOneNews(news).subscribe({
+        next: (resp) => {
+          console.log("Produit ajouté  : ", resp)
+          this.displaySuccessToast = true
+          setTimeout(() => this.displaySuccessToast = false, 2000)
+        },
+        error: (err) => {
+          console.error(err)
+          this.displayErrorToast = true
+          setTimeout(() => this.displayErrorToast = false, 5000)
+        },
+        // complete: () => { }
+      })
     } else {
       console.error("Formulaire non envoyé, au moins un champs est 'en erreur'")
     }

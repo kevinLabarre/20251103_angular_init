@@ -3,6 +3,15 @@
 
   <h2>Ajout d'une actualité</h2>
 
+  @if(displaySuccessToast){
+  <app-toast-component text="Actualité ajoutée avec succès" />
+  }
+
+  @if(displayErrorToast){
+  <app-toast-component text="Erreur lors de l'ajout, veuillez réessayer ultérieurement" type="error" />
+  }
+
+
   <form (ngSubmit)="handleSubmit()" [formGroup]=newsForm>
 
     <div>

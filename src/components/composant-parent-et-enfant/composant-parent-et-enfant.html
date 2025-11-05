@@ -1,9 +1,22 @@
 <section>
-  <h1>Passage de données entre deux composant: du composant parent -> composant enfant</h1>
+  <h1>Passage de données entre deux composant:</h1>
+
+  <h2>Du composant parent -> composant enfant</h2>
+
   <!-- Attention ! syntaxe encore très récente ( "{{text}}" )
   <app-composant-enfant parentText="{{text}}" parentUser="{{user}}"/>
 -->
 
   <!-- Syntaxe à priviliégier -->
   <app-composant-enfant [parentText]="text" [parentUser]="user" />
+
+  <h2>Du composant enfant -> composant parent</h2>
+
+  <p>Donnée affichée dans le composant parent: {{data}}</p>
+
+  <app-composant-enfant-pour-output (fctPassData)="passDataFct($event)" />
+
+
+
+
 </section>
